@@ -1,0 +1,189 @@
+package Homework1;
+
+import java.util.*;
+
+public class Problem2 {
+
+	public static void main(String[] args) {
+
+		// choose the algorithm that you want to run
+		Scanner reader1 = new Scanner(System.in);
+		System.out.println("Enter the number of the algorithm that you want"
+				+ " to run from 1-6 ");
+		// get user input for alg
+		int alg = reader1.nextInt();
+
+		long startTime, endTime;
+		long elapsedTime; // Time Interval in milliseconds
+
+		// if user chooses alg 1
+
+		if (alg == 1) {
+
+			// prompt user for value of N
+			Scanner reader2 = new Scanner(System.in);
+			System.out
+					.println("Enter the N number of times you "
+							+ "want the algorithms to run. Choose from 50, 100, 200, 400,"
+							+ " 800, 1600 and 3200 ");
+			// get user input for N
+			int N = reader2.nextInt();
+
+			startTime = System.nanoTime();
+
+			// in case of overflowing and to avoid returning a negative value
+			long sum = 0;
+			for (int i = 0; i < N + 1; i++)
+				sum = sum + i;
+			System.out.println("The sum for the first algorithm is " + sum);
+
+			endTime = System.nanoTime();
+
+			elapsedTime = endTime - startTime;
+
+			System.out.println("The elapsed time for the run is " + elapsedTime
+					/ 1000.0);
+
+		}
+
+		if (alg == 2) {
+
+			// prompt user for value of N
+			Scanner reader2 = new Scanner(System.in);
+			System.out
+					.println("Enter the N number of times you "
+							+ "want the algorithms to run. Choose from 50, 100, 200, 400,"
+							+ " 800, 1600 and 3200 ");
+			// get user input for N
+			int N = reader2.nextInt();
+
+			startTime = System.nanoTime();
+
+			long sum = 0;
+			for (int i = 0; i < N + 1; i++)
+				for (int j = 0; j < N; j++)
+					sum = sum + i + j;
+			System.out.println("The sum for the second algorithm is " + sum);
+
+			endTime = System.nanoTime();
+
+			elapsedTime = endTime - startTime;
+
+			System.out.println("The elapsed time for the run is " + elapsedTime
+					/ 1000.0);
+		}
+
+		else if (alg == 3) {
+
+			// prompt user for value of N
+			Scanner reader2 = new Scanner(System.in);
+			System.out
+					.println("Enter the N number of times you "
+							+ "want the algorithms to run. Choose from 50, 100, 200, 400,"
+							+ " and 800");
+
+			// get user input for N
+			int N = reader2.nextInt();
+
+			startTime = System.nanoTime();
+
+			long sum = 0;
+			for (int i = 0; i < N + 1; i++)
+				for (int j = 0; j < N * N; j++)
+					sum = sum + i + j;
+
+			System.out.println("The sum for the third algorithm is " + sum);
+
+			endTime = System.nanoTime();
+
+			elapsedTime = endTime - startTime;
+
+			System.out.println("The elapsed time for the run is "
+					+ (double) elapsedTime / 1000.0);
+
+		}
+
+		else if (alg == 4) {
+
+			// prompt user for value of N
+			Scanner reader2 = new Scanner(System.in);
+			System.out
+					.println("Enter the N number of times you "
+							+ "want the algorithms to run. Choose from 50, 100, 200, 400,"
+							+ " 800, 1600 and 3200 ");
+			// get user input for N
+			int N = reader2.nextInt();
+
+			startTime = System.nanoTime();
+
+			long sum = 0;
+			for (int i = 0; i < N + 1; i++)
+				for (int j = 0; j < i; j++)
+					sum = sum + i + j;
+			System.out.println("The sum for the fourth algorithm is " + sum);
+
+			endTime = System.nanoTime();
+
+			elapsedTime = endTime - startTime;
+
+			System.out.println("The elapsed time for the run is "
+					+ (double) elapsedTime / 1000.0);
+		}
+
+		else if (alg == 5) {
+
+			// prompt user for value of N
+			Scanner reader2 = new Scanner(System.in);
+			System.out
+					.println("Enter the N number of times you "
+							+ "want the algorithms to run. Choose from 20, 40 and 80. ");
+			// get user input for N
+			int N = reader2.nextInt();
+
+			startTime = System.nanoTime();
+
+			long sum = 0;
+			for (int i = 0; i < N + 1; i++)
+				for (int j = 0; j < i * i; j++)
+					for (int k = 0; k < j; k++)
+						sum = sum + i + j + k;
+			System.out.println("The sum for the fifth algorithm is " + sum);
+
+			endTime = System.nanoTime();
+
+			elapsedTime = endTime - startTime;
+
+			System.out.println("The elapsed time for the run is "
+					+ (double) elapsedTime / 1000.0);
+		}
+
+		else if (alg == 6) {
+
+			// prompt user for value of N
+			Scanner reader2 = new Scanner(System.in);
+			System.out
+					.println("Enter the N number of times you "
+							+ "want the algorithms to run. Choose from 20, 40 and 80. ");
+			// get user input for N
+			int N = reader2.nextInt();
+
+			startTime = System.nanoTime();
+
+			long sum = 0;
+			for (int i = 1; i < N + 1; i++)
+				for (int j = 1; j < i * i; j++)
+					if (j % i == 0)
+						for (int k = 0; k < j; k++)
+							sum = sum + i + j + k;
+			System.out.println("The sum for the sixth algorithm is " + sum);
+
+			endTime = System.nanoTime();
+
+			elapsedTime = endTime - startTime;
+
+			System.out.println("The elapsed time for the run is "
+					+ (double) elapsedTime / 1000.0);
+		}
+
+	}
+}
